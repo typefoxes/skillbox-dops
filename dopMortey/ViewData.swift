@@ -34,3 +34,12 @@ struct MorteyData: Codable{
      case image = "image"
         }
     }
+class saveIt: Object {
+    @objc dynamic var name: String? = ""
+    @objc dynamic var status: String? = ""
+    @objc dynamic var species: String? = ""
+    @objc dynamic var gender: String? = ""
+    @objc dynamic var location: String? = ""
+    @objc dynamic var image: String? = ""
+    
+}
