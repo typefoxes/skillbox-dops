@@ -14,6 +14,8 @@
 		985E5E6125B4190D003FDDC1 /* dopMortey.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 985E5E5F25B4190D003FDDC1 /* dopMortey.xcdatamodeld */; };
 		985E5E6325B4190E003FDDC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985E5E6225B4190E003FDDC1 /* Assets.xcassets */; };
 		985E5E6625B4190E003FDDC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985E5E6425B4190E003FDDC1 /* LaunchScreen.storyboard */; };
+		985E5E7525B419E3003FDDC1 /* ViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985E5E7425B419E3003FDDC1 /* ViewData.swift */; };
+		985E5E7825B41E85003FDDC1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985E5E7725B41E85003FDDC1 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		985E5E6225B4190E003FDDC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		985E5E6525B4190E003FDDC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		985E5E6725B4190E003FDDC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		985E5E7425B419E3003FDDC1 /* ViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewData.swift; sourceTree = "<group>"; };
+		985E5E7725B41E85003FDDC1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +66,12 @@
 				985E5E5825B4190D003FDDC1 /* SceneDelegate.swift */,
 				985E5E5A25B4190D003FDDC1 /* ViewController.swift */,
 				985E5E5C25B4190D003FDDC1 /* Main.storyboard */,
+				985E5E7725B41E85003FDDC1 /* CollectionViewCell.swift */,
 				985E5E6225B4190E003FDDC1 /* Assets.xcassets */,
 				985E5E6425B4190E003FDDC1 /* LaunchScreen.storyboard */,
 				985E5E6725B4190E003FDDC1 /* Info.plist */,
 				985E5E5F25B4190D003FDDC1 /* dopMortey.xcdatamodeld */,
+				985E5E7425B419E3003FDDC1 /* ViewData.swift */,
 			);
 			path = dopMortey;
 			sourceTree = "<group>";
@@ -142,8 +148,10 @@
 			files = (
 				985E5E5B25B4190D003FDDC1 /* ViewController.swift in Sources */,
 				985E5E6125B4190D003FDDC1 /* dopMortey.xcdatamodeld in Sources */,
+				985E5E7825B41E85003FDDC1 /* CollectionViewCell.swift in Sources */,
 				985E5E5725B4190D003FDDC1 /* AppDelegate.swift in Sources */,
 				985E5E5925B4190D003FDDC1 /* SceneDelegate.swift in Sources */,
+				985E5E7525B419E3003FDDC1 /* ViewData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
