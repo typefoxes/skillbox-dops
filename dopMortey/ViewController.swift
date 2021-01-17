@@ -1,5 +1,6 @@
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
             
             DispatchQueue.main.async {
                 if self.isLoading == false && self.currentPage <= 34 && self.currentPage != 35 {
-                
+                    
                 self.morteys += morteyDataAll.results
                 self.collectionView.reloadData()
                 self.currentPage += 1
