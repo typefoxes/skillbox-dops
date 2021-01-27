@@ -34,12 +34,20 @@ struct MorteyData: Codable{
      case image = "image"
         }
     }
-class saveIt: Object {
-    @objc dynamic var name: String? = ""
-    @objc dynamic var status: String? = ""
-    @objc dynamic var species: String? = ""
-    @objc dynamic var gender: String? = ""
-    @objc dynamic var location: String? = ""
-    @objc dynamic var image: String? = ""
+class saveIt: Object, Codable {
+    @objc dynamic var name = String()
+    @objc dynamic var status = String()
+    @objc dynamic var species = String()
+    @objc dynamic var gender = String()
+    @objc dynamic var location = String()
+    @objc dynamic var image = String()
     
+    enum CodingKeys: String, CodingKey {
+     case name = "name"
+     case status = "status"
+     case species = "species"
+     case gender = "gender"
+     case location = "location"
+     case image = "image"
+        }
 }
