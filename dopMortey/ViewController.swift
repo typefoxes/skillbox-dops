@@ -19,21 +19,25 @@ class ViewController: UIViewController {
     var isLoading = false
 
 
-    func save(data: Object){
-            do{
-                try! realm.write{
-                     realm.add(data)
-                }
-            } catch {
-                       print("Error saving data: \(error)")
-                   }
-           }
+//    func save(data: Object){
+//            do{
+//                try! realm.write{
+//                     realm.add(data)
+//                }
+//            } catch {
+//                       print("Error saving data: \(error)")
+//                   }
+//           }
     func loadData(page: Int) {
         let session = URLSession.shared
         let url = URL(string: "https://rickandmortyapi.com/api/character/?page=\(page)")!
         let task = session.dataTask(with: url) { data, responce, error in
         if let data = data {
         do{
+            try! self.realm.write({
+            let model: saveIt = try! JSONDecoder().decode(saveIt.self, from: data)
+                                    self.realm.add(model) })
+                
             let morteyDataAll: MorteyDataAll = try! JSONDecoder().decode(MorteyDataAll.self, from: data)
             DispatchQueue.main.async {
                 if self.currentPage <= 34 && self.currentPage != 35 {
@@ -82,25 +86,13 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-       
         let mortey = morteys[indexPath.row]
-        let saveItitem = saveIt()
         
-          saveItitem.gender = mortey.gender
-          saveItitem.image = mortey.image
-          saveItitem.location = mortey.location.name
-          saveItitem.name = mortey.name
-          saveItitem.species = mortey.species
-          saveItitem.status = mortey.status
-          
-          try!  self.realm.write ({ self.realm.add(saveItitem) })
-          print(saveItitem)
-        
-        cell.nameLabel.text = saveItitem.name ?? mortey.name
-        cell.statusLabel.text = saveItitem.status ?? mortey.status
-        cell.spiciesLabel.text = saveItitem.species ?? mortey.species
-        cell.lacationNameLabel.text = saveItitem.location ?? mortey.location.name
-        cell.genderLabel.text = saveItitem.gender ?? mortey.gender
+        cell.nameLabel.text = mortey.name
+        cell.statusLabel.text = mortey.status
+        cell.spiciesLabel.text = mortey.species
+        cell.lacationNameLabel.text = mortey.location.name
+        cell.genderLabel.text = mortey.gender
         
         cell.imageView.layer.cornerRadius = 15
         cell.layer.cornerRadius = 15
